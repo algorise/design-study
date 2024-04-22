@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abs_factory.hpp" />
+    <ClInclude Include="commonfiles.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="abs_factory.cpp" />

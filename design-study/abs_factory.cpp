@@ -10,16 +10,21 @@
 /***************************************/
 /* A Car Factory Simulation */
 /***************************************/
-#include <iostream>
-#include <string>
-#include <memory>
-#include <format>
+#include "commonfiles.hpp"
 #include "abs_factory.hpp"
 
-void createSomeCars(IAbstractCarFactory& carFactory)
+void createSomeCars(myAbsoluteFactory::IAbstractCarFactory& carFactory)
 {
 	auto sedan{ carFactory.makeSedan() };
 	auto suv{ carFactory.makeSuv() };
 	std::cout << format("Sedan: {}\n", sedan->info());
 	std::cout << format("Suv: {}\n", suv->info());
+}
+
+void abs_factory() 
+{
+	myAbsoluteFactory::FordFactory fordFactory;
+	myAbsoluteFactory::ToyotaFactory toyotaFactory;
+	createSomeCars(fordFactory);
+	createSomeCars(toyotaFactory);
 }
